@@ -12,5 +12,15 @@ def log_map():
         query = "INSERT INTO log_map (sid, map, player_count) VALUES ('" + \
                 sid + "', '" + \
                 map_name + "', '" + \
-                player_count + "')"
+                player_count + "');"
+        Database.db.execute(query)
+
+
+def log_players():
+    players = fetch_api("https://clwo.eu/jailbreak/api/v2/players.php")
+    print("Parsing " + str(len(players['data'])) + " players.")
+    for player in players['data']:
+        account_id = escape_string(str(player['AccountID']))
+        sid = escape_string(str(player['SID']))
+        query = "INSERT INTO log_players (account_id, sid) VALUES('" + account_id + "', '" + sid + "');"
         Database.db.execute(query)

@@ -1,4 +1,5 @@
-from map_logging import *
+from database import Database
+from loggers import log_map, log_players
 from settings import Settings
 
 
@@ -11,6 +12,7 @@ def main():
     # Main work
     print("Performing main tasks")
     log_map()
+    log_players()
 
     # Shut down
     print("Finalizing")
