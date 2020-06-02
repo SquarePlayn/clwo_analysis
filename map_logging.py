@@ -5,7 +5,7 @@ from utility import fetch_api
 def log_map():
     network_query = fetch_api("https://clwo.eu/jailbreak/api/v2/networkquery.php")
     for server in network_query['data']:
-        print(f"Parsing server {server['ShortName']} with SID {server['ServerID']}.")
+        print("Parsing server " + server['ShortName'] + " with SID " + server['ServerID'] + ".")
         sid = escape_string(server['ServerID'])
         player_count = escape_string(server['ClientCount'])
         map_name = escape_string(server['MapName'])
