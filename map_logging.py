@@ -9,5 +9,8 @@ def log_map():
         sid = escape_string(server['ServerID'])
         player_count = escape_string(server['ClientCount'])
         map_name = escape_string(server['MapName'])
-        query = f"INSERT INTO log_map (sid, map, player_count) VALUES ('{sid}', '{map_name}', '{player_count}')"
+        query = "INSERT INTO log_map (sid, map, player_count) VALUES ('" + \
+                sid + "', '" + \
+                map_name + "', '" + \
+                player_count + "')"
         Database.db.execute(query)
