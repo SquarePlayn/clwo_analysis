@@ -129,5 +129,5 @@ dmypy.json
 .pyre/
 
 # Own excludes
-.idea/*
+.idea/
 conf.json

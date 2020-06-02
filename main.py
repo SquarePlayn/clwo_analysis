@@ -1,5 +1,6 @@
+from database import Database
 from map_logging import *
-from utility import *
+from settings import Settings
 
 
 def main():
