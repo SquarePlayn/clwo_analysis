@@ -3,13 +3,13 @@ import MySQLdb
 from settings import Settings
 
 
+def escape_string(value):
+    """ Escapes a string so it is safe to use in a query """
+    return MySQLdb.escape_string(value).decode()
+
+
 class Database:
     db = None
-
-    @staticmethod
-    def escape_string(value):
-        """ Escapes a string so it is safe to use in a query """
-        return MySQLdb.escape_string(value).decode()
 
     @staticmethod
     def login():
